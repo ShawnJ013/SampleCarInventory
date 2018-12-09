@@ -1,0 +1,52 @@
+<p>
+  admin works!
+</p>
+<div class="row">
+  <div class="col-xs-12">
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+        <div class="col-sm-5 form-group">
+          <label for="Make">Make</label>
+          <input type="text" class="form-control" name="Make" ngModel #Make="ngModel">
+      </div>
+      <div class="col-sm-5 form-group">
+          <label for="Year">Year</label>
+          <input type="text" class="form-control" name="Year" ngModel #Year="ngModel">
+      </div>
+      <div class="col-sm-5 form-group">
+          <label for="Color">Color</label>
+          <input type="text" class="form-control" name="Color" ngModel #Color="ngModel">
+      </div>
+      <div class="col-sm-5 form-group">
+          <label for="Price">Price</label>
+          <input type="number" class="form-control" name="Price" ngModel #Price="ngModel">
+      </div>
+      <div class="col-sm-5 form-group">
+          <label for="HasSunRoof">HasSunRoof</label>
+          <input type="text" class="form-control" name="HasSunRoof" ngModel #HasSunRoof="ngModel">
+      </div>
+      <div class="col-sm-5 form-group">
+          <label for="IsFourWheelDrive">IsFourWheelDrive</label>
+          <input type="text" class="form-control" name="IsFourWheelDrive" ngModel #IsFourWheelDrive="ngModel">
+      </div>
+      <div class="col-sm-5 form-group">
+          <label for="HaslowMiles">HaslowMiles</label>
+          <input type="text" class="form-control" name="HaslowMiles" ngModel #HaslowMiles="ngModel">
+      </div>
+      <div class="col-sm-5 form-group">
+          <label for="HasPowerWindows">HasPowerWindows</label>
+          <input type="text" class="form-control" name="HasPowerWindows" ngModel #HasPowerWindows="ngModel">
+      </div>
+      <div class="col-sm-5 form-group">
+          <label for="HasNavigation">HasNavigation</label>
+          <input type="text" class="form-control" name="HasNavigation" ngModel #HasNavigation="ngModel">
+      </div>
+      <div class="col-sm-5 form-group">
+          <label for="HasHeatedSeats">HasHeatedSeats</label>
+          <input type="text" class="form-control" name="HasHeatedSeats" ngModel #HasHeatedSeats="ngModel">
+      </div>
+      <button type="submit" class="btn btn-light">Submit</button>
+    </form>
+  </div>
+</div>
+
