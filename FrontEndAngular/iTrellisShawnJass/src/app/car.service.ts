@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { Http, Response } from '@angular/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class CarService {
   private headers: HttpHeaders;
   private accessPointUrl = 'http://localhost:65416/api/Vehicles';

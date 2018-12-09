@@ -18,6 +18,7 @@ export class AdminComponent implements OnInit {
   onSubmit(form: NgForm) {
     const addCar = form.value;
     const newCarObject = {
+      Id: addCar.Id,
       Make: addCar.Make,
       Year: addCar.Year,
       Color: addCar.Color,
