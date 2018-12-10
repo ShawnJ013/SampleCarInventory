@@ -1,3 +1,97 @@
-<p>
-  home works!
-</p>
+<div class="container">
+  <form class="ret-form" #carSearchForm="ngForm" (ngSubmit)="onSubmit(carSearchForm)">
+    <!-- <div class="col-sm-5 form-group">
+          <label for="Id">Id</label>
+          <input type="number" class="form-control" name="Id" ngModel #Id="ngModel">
+      </div> -->
+    <div class="col-sm-5 form-group">
+      <!-- [(ngModel)]="Make" -->
+      <label for="Make">Make</label>
+      <select type="text" class="form-control" name="Make" ngModel #Make="ngModel">
+        <option *ngFor="let mak of carData">
+          {{ mak.make }}
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-5 form-group">
+      <label for="Year">Year</label>
+      <select type="number" class="form-control" name="Year" ngModel #Year="ngModel">
+        <option *ngFor="let yea of carData">
+          {{ yea.year | date:'yyyy' }}
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-5 form-group">
+      <label for="Color">Color</label>
+      <select type="text" class="form-control" name="Color" ngModel #Color="ngModel">
+        <option *ngFor="let col of carData">
+          {{ col.color }}
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-5 form-group">
+      <label for="Price">Price</label>
+      <input type="number" class="form-control" name="Price" ngModel #Price="ngModel">
+    </div>
+    <div class="col-sm-5 form-group">
+      <label for="HasSunRoof">Sun Roof</label>
+      <input type="checkbox" name="HasSunRoof" ngModel #HasSunRoof="ngModel">
+    </div>
+    <div class="col-sm-5 form-group">
+      <label for="IsFourWheelDrive">Four Wheel Drive</label>
+      <input type="checkbox" name="IsFourWheelDrive" ngModel #IsFourWheelDrive="ngModel">
+      <!-- <input [(ngModel)]="addCar.IsFourWheelDrive" class="form-control" type="checkbox" name="IsFourWheelDrive"> -->
+    </div>
+    <div class="col-sm-5 form-group">
+      <label for="HaslowMiles">Low Miles</label>
+      <input type="checkbox" name="HaslowMiles" ngModel #HaslowMiles="ngModel">
+    </div>
+    <div class="col-sm-5 form-group">
+      <label for="HasPowerWindows">Power Windows</label>
+      <input type="checkbox" name="HasPowerWindows" ngModel #HasPowerWindows="ngModel">
+    </div>
+    <div class="col-sm-5 form-group">
+      <label for="HasNavigation">Navigation</label>
+      <input type="checkbox" name="HasNavigation" ngModel #HasNavigation="ngModel">
+    </div>
+    <div class="col-sm-5 form-group">
+      <label for="HasHeatedSeats">Heated Seats</label>
+      <input type="checkbox" name="HasHeatedSeats" ngModel #HasHeatedSeats="ngModel">
+    </div>
+    <button type="submit" class="btn btn-light">Search</button>
+
+  </form>
+</div>
+
+<div class="container">
+  <div class="table">
+    <thead>
+      <tr>
+        <th>Make</th>
+        <th>Year</th>
+        <th>Color</th>
+        <th>Price</th>
+        <th>Sun Roof</th>
+        <th>Low Miles</th>
+        <th>Four Wheel Drive</th>
+        <th>Power Windows</th>
+        <th>Navigation</th>
+        <th>Heated Seats</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let filter of returnCar">
+        <td>{{ filter.make }}</td>
+        <td>{{ filter.year | date: 'yyyy' }}</td>
+        <td>{{ filter.color }}</td>
+        <td>{{ filter.price }}</td>
+        <td>{{ filter.hasSunRoof }}</td>
+        <td>{{ filter.haslowMiles }}</td>
+        <td>{{ filter.isFourWheelDrive }}</td>
+        <td>{{ filter.hasPowerWindows }}</td>
+        <td>{{ filter.hasNavigation }}</td>
+        <td>{{ filter.hasHeatedSeats }}</td>
+      </tr>
+    </tbody>
+  </div>
+</div>

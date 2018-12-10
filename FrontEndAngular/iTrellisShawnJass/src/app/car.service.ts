@@ -16,7 +16,21 @@ export class CarService {
      return this.http.get(this.accessPointUrl, {headers: this.headers});
    }
 
+   public getFromSearch(search) {
+    return this.http.get('http://localhost:65416/api/Vehicles/search', {headers: this.headers });
+    // params: new HttpParams().set('search', search) });
+  }
+
+   public update(payload) {
+    return this.http.put(this.accessPointUrl + '/' + payload.id, payload, {headers: this.headers});
+  }
+
    public add(payload) {
     return this.http.post(this.accessPointUrl, payload, {headers: this.headers});
+   }
+
+   public remove(payload) {
+    return this.http.delete(this.accessPointUrl + '/' + payload.id, {headers: this.headers});
   }
+
 }

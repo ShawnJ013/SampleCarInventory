@@ -14,7 +14,7 @@
       </div>
       <div class="col-sm-5 form-group">
           <label for="Year">Year</label>
-          <input type="text" class="form-control" name="Year" ngModel #Year="ngModel">
+          <input type="number" class="form-control" name="Year" ngModel #Year="ngModel">
       </div>
       <div class="col-sm-5 form-group">
           <label for="Color">Color</label>
@@ -26,27 +26,28 @@
       </div>
       <div class="col-sm-5 form-group">
           <label for="HasSunRoof">HasSunRoof</label>
-          <input type="text" class="form-control" name="HasSunRoof" ngModel #HasSunRoof="ngModel">
+          <input type="checkbox" name="HasSunRoof" ngModel #HasSunRoof="ngModel">
       </div>
       <div class="col-sm-5 form-group">
           <label for="IsFourWheelDrive">IsFourWheelDrive</label>
-          <input type="text" class="form-control" name="IsFourWheelDrive" ngModel #IsFourWheelDrive="ngModel">
-      </div>
+          <input type="checkbox" name="IsFourWheelDrive" ngModel #IsFourWheelDrive="ngModel">
+          <!-- <input [(ngModel)]="addCar.IsFourWheelDrive" class="form-control" type="checkbox" name="IsFourWheelDrive"> -->
+        </div>
       <div class="col-sm-5 form-group">
           <label for="HaslowMiles">HaslowMiles</label>
-          <input type="text" class="form-control" name="HaslowMiles" ngModel #HaslowMiles="ngModel">
+          <input type="checkbox" name="HaslowMiles" ngModel #HaslowMiles="ngModel">
       </div>
       <div class="col-sm-5 form-group">
           <label for="HasPowerWindows">HasPowerWindows</label>
-          <input type="text" class="form-control" name="HasPowerWindows" ngModel #HasPowerWindows="ngModel">
+          <input type="checkbox" name="HasPowerWindows" ngModel #HasPowerWindows="ngModel">
       </div>
       <div class="col-sm-5 form-group">
           <label for="HasNavigation">HasNavigation</label>
-          <input type="text" class="form-control" name="HasNavigation" ngModel #HasNavigation="ngModel">
+          <input type="checkbox" name="HasNavigation" ngModel #HasNavigation="ngModel">
       </div>
       <div class="col-sm-5 form-group">
           <label for="HasHeatedSeats">HasHeatedSeats</label>
-          <input type="text" class="form-control" name="HasHeatedSeats" ngModel #HasHeatedSeats="ngModel">
+          <input type="checkbox" name="HasHeatedSeats" ngModel #HasHeatedSeats="ngModel">
       </div>
       <button type="submit" class="btn btn-light">Submit</button>
     </form>
