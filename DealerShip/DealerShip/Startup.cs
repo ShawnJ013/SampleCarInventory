@@ -46,6 +46,21 @@ namespace DealerShip
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseMvc(routes =>
+
+            {
+                //New Route
+                routes.MapRoute(
+                    name: "Search",
+                    template: "Search",
+                    defaults: new { controller = "Vehicles", action = "Search" }
+                );
+
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Vehicles}/{action=SearchVehicles}/{id?}");
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();

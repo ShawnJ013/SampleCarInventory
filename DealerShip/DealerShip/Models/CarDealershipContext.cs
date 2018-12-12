@@ -31,7 +31,7 @@ namespace DealerShip.Models
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Year).HasColumnType("date");
+                entity.Property(e => e.Year).HasColumnType("string");
             });
         }
     }

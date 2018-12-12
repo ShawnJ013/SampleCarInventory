@@ -47,6 +47,69 @@ namespace DealerShip.Controllers
             return Ok(vehicles);
         }
 
+
+        //CarSearch Criteria
+        [Route("api/Vehicles/Search")]
+        [HttpGet]
+        public IQueryable<Vehicles> SearchVehicles(SearchVehicle search)  
+        {
+            IQueryable<Vehicles> allVehicles = _context.Vehicles;
+
+            if (search.Make != null)
+            {
+                allVehicles = allVehicles.Where(r => r.Make == search.Make);
+            }
+
+            if (search.Year != null)
+            {
+                allVehicles = allVehicles.Where(r => r.Year == search.Year);
+            }
+
+            if (search.Color != null)
+            {
+                allVehicles = allVehicles.Where(r => r.Color == search.Color);
+            }
+
+            //if (search.FilterPrice > 0)
+            //{
+            //    allVehicles = allVehicles.Where(r => r.Price <= search.FilterPrice);
+            //}
+
+            if (search.HasSunRoof != null)
+            {
+                allVehicles = allVehicles.Where(r => r.HasSunRoof == search.HasSunRoof);
+            }
+
+            if (search.IsFourWheelDrive != null)
+            {
+                allVehicles = allVehicles.Where(r => r.IsFourWheelDrive == search.IsFourWheelDrive);
+            }
+
+            if (search.HaslowMiles != null)
+            {
+                allVehicles = allVehicles.Where(r => r.HaslowMiles == search.HaslowMiles);
+            }
+
+            if (search.HasPowerWindows != null)
+            {
+                allVehicles = allVehicles.Where(r => r.HasPowerWindows == search.HasPowerWindows);
+            }
+
+            if (search.HasNavigation != null)
+            {
+                allVehicles = allVehicles.Where(r => r.HasNavigation == search.HasNavigation);
+            }
+
+            if (search.HasHeatedSeats != null)
+            {
+                allVehicles = allVehicles.Where(r => r.HasHeatedSeats == search.HasHeatedSeats);
+            }
+
+
+
+            return allVehicles;
+        }
+
         // PUT: api/Vehicles/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutVehicles([FromRoute] int id, [FromBody] Vehicles vehicles)
